@@ -34,12 +34,19 @@ if phi == 2021:
     # ... und iteriere jetzt nach x aufsteigend über alle x und tue für jedes Element:
     for x in sorted(phi_d):
         # rechne y aus
-        y = int((n * x) / (3 * x - n))
+        y = (n * x) / (3 * x - n)
 
         # und gebe dieses Paar aus
         print("x="+str(x)+", y="+str(y))
 
 else:
-    # und gebe hier noch aus, auf wie viele Weisen den sich n den darstellen lässt
+    # und gebe hier noch aus, auf wie viele Weisen den sich n den darstellen lässt..
     print(str(n)+" lässt sich leider auf "+str(phi)+" mögliche Weisen als Summe zweier Stammbrüche darstellen")
 
+    # ... und iteriere jetzt nach x aufsteigend über alle x und tue für jedes Element:
+    for x in sorted(phi_d):
+        # rechne y aus
+        y = int((n * x) / (3 * x - n))
+
+        # und gebe dieses Paar aus
+        print("x=" + str(x) + ", y=" + str(y))
