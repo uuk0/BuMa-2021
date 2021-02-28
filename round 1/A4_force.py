@@ -80,7 +80,7 @@ class Network:
     def check_colorings(self, colors=2) -> bool:
         m = 2 ** len(self.connections)
         for i, coloring in enumerate(self.get_colorings(colors)):
-            if i % 1000 == 10:
+            if i % 100000 == 10:
                 # print("\r", i / m, i, m, end="")
                 print(i / m, i, m)
             if not self.check_coloring(coloring):
@@ -97,7 +97,7 @@ class Network:
             jobs.append(pool.apply_async(self.check_coloring, (coloring,)))
         counts = 0
         while len(jobs) > 0:
-            if ran // 1000 != counts:
+            if ran // 100000 != counts:
                 counts = ran // 1000
                 print("\r", ran / m, ran, m, end="")
 
@@ -125,7 +125,7 @@ class Network:
         for process in process_instances:
             process.start()
         while True:
-            if ran // 1000 != counts:
+            if ran // 100000 != counts:
                 counts = ran // 1000
                 print("\r", ran / m, ran, m, end="")
             try:
